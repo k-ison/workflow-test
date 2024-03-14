@@ -1,4 +1,4 @@
-mdxCopy codename: Supa-backup
+name: 'backup-database'
 
 # Controls when the workflow will run
 on:
