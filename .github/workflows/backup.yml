@@ -3,13 +3,9 @@ name: 'backup-database'
 # Controls when the workflow will run
 on:
   # Allows you to run this workflow manually from the Actions tab
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,5 +25,5 @@ jobs:
           wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/trusted.gpg.d/pgdg.asc &>/dev/null
           sudo apt update
           sudo apt install postgresql-15 postgresql-client-15 -y
-          /usr/lib/postgresql/15/bin/pg_dump --clean --if-exists --quote-all-identifiers --schema '*' --exclude-schema 'extensions|graphql|graphql_public|net|pgbouncer|pgsodium|pgsodium_masks|realtime|supabase_functions|storage|pg_*|information_schema' -d postgres://postgres.qpfpqzjzriwrmtnwawit:GhostAIA7713$$@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres
+          /usr/lib/postgresql/15/bin/pg_dump --clean --if-exists --quote-all-identifiers --schema '*' --exclude-schema 'extensions|graphql|graphql_public|net|pgbouncer|pgsodium|pgsodium_masks|realtime|supabase_functions|storage|pg_*|information_schema' -d 'postgres://postgres.qpfpqzjzriwrmtnwawit:GhostAIA7713$$@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres'
 
