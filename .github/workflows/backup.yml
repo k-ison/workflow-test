@@ -1,6 +1,6 @@
 name: 'backup-database'
 on:
-  pull_request:
+  workflow_dispatch:
 jobs:
   build: 
     runs-on: ubuntu-latest
