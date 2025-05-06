@@ -1,3 +1,3 @@
 # workflow-test
 
-This is a test for new branch!
+This is a test for creating a new branch!
